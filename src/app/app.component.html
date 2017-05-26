@@ -1,10 +1,10 @@
 <div class="buttons">
-  <button>One element</button>
-  <button>Two elements</button>
-  <button>Three elements</button>
-  <button>Four elements</button>
-  <button>Five elements</button>
+  <button
+    ng-repeat="n in ['One', 'Two', 'Three', 'Four', 'Five'] track by $index"
+    ng-click="$ctrl.getObjects($index + 1)"
+  >{{n}} elements</button>
 </div>
+<hr class="container__hr">
 <div class="slider-item" ng-repeat="item in $ctrl.data.items">
   <div class="slider-item__label">{{item.name}}</div>
   <rzslider
@@ -22,8 +22,8 @@
     tabindex="{{$index + 1}}"
   >
 </div>
-<hr>
-<div watch-model ng-model="$ctrl.data.items">
+<hr class="container__hr">
+<div watch-model ng-if="$ctrl.data.items.length" ng-model="$ctrl.data.items">
   Result:
   <div ng-repeat="item in $ctrl.data.items">{{item.name}}: {{item.percent | number : 2}}%</div>
 </div>

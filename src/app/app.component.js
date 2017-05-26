@@ -1,25 +1,9 @@
 export const appComponent = {
   template: require('./app.component.html'),
-  controller() {
+  controller($http) {
+    'ngInject';
     this.data = {
-      items: [
-        {
-          name: 'item 1',
-          percent: 0
-        },
-        {
-          name: 'item 2',
-          percent: 45
-        },
-        {
-          name: 'item 3',
-          percent: 55
-        },
-        {
-          name: 'item 4',
-          percent: 55
-        }
-      ]
+      items: []
     };
     this.options = {
       floor: 0,
@@ -29,6 +13,15 @@ export const appComponent = {
       translate(value) {
         return `${value}%`;
       }
+    };
+    this.getObjects = number => {
+      $http.get(`api/data${number}.json`)
+        .then(response => {
+          this.data = response.data;
+        });
+    };
+    this.$onInit = () => {
+      this.getObjects(3);
     };
   }
 };

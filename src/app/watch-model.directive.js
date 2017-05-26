@@ -3,7 +3,7 @@ export const watchModel = () => ({
   link(scope, elem, attr, model) {
     let modelChanged = false;
     scope.$watch(() => model.$modelValue, (newVal, prevVal) => {
-      if (modelChanged) {
+      if (modelChanged || newVal.length <= 1) {
         // Check if user changed the model or $digest
         modelChanged = false;
         return;

@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "name": "Item 1",
+      "percent": 55
+    },
+    {
+      "name": "Item 2",
+      "percent": 55
+    }
+  ]
+}

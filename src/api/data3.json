@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "name": "One item",
+      "percent": 25
+    },
+    {
+      "name": "Another one",
+      "percent": 0
+    },
+    {
+      "name": "Yet another",
+      "percent": 75
+    }
+  ]
+}
