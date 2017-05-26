@@ -1,0 +1,29 @@
+<div class="buttons">
+  <button>One element</button>
+  <button>Two elements</button>
+  <button>Three elements</button>
+  <button>Four elements</button>
+  <button>Five elements</button>
+</div>
+<div class="slider-item" ng-repeat="item in $ctrl.data.items">
+  <div class="slider-item__label">{{item.name}}</div>
+  <rzslider
+    rz-slider-model="item.percent"
+    rz-slider-options="$ctrl.options"
+  ></rzslider>
+  <input
+    class="slider-item__input"
+    type="number"
+    ng-model="item.percent"
+    string-to-number
+    min="0"
+    max="100"
+    step="0.01"
+    tabindex="{{$index + 1}}"
+  >
+</div>
+<hr>
+<div watch-model ng-model="$ctrl.data.items">
+  Result:
+  <div ng-repeat="item in $ctrl.data.items">{{item.name}}: {{item.percent | number : 2}}%</div>
+</div>

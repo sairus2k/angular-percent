@@ -1,3 +1,24 @@
+@import '~angularjs-slider/dist/rzslider.css';
+
 body {
   background-color: lightgrey;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 50px auto 0;
+}
+
+.slider-item {
+  display: flex;
+  align-items: center;
+}
+
+.slider-item__label {
+  min-width: 10%;
+}
+
+.slider-item__input {
+  margin-left: 80px;
+  padding: 4px 10px;
 }

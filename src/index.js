@@ -1,11 +1,16 @@
 import angular from 'angular';
+import 'angularjs-slider';
 
-import {hello} from './app/hello';
+import {appComponent} from './app/app.component';
+import {watchModel} from './app/watch-model.directive';
 
 import './index.css';
 
 export const app = 'app';
 
 angular
-  .module(app, [])
-  .component('app', hello);
+  .module(app, [
+    'rzModule'
+  ])
+  .directive('watchModel', watchModel)
+  .component('app', appComponent);
